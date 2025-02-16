@@ -3,9 +3,7 @@ class Solution:
         max=nums[0]
         n=len(nums)
         sum=0
-        if n==1:
-            return nums[0]
-      
+
         for i in range(n):
             sum=sum+nums[i]
             if max<sum:
