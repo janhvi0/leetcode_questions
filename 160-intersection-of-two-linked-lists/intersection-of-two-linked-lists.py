@@ -8,18 +8,14 @@ class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
         if headA and headB is None:
             return None
-        
-        seen = set()
 
-        while headA:
-            seen.add(headA)
-            headA = headA.next
+        pA = headA
+        pB = headB
+        while pA != pB:
+            pA = pA.next if pA else headB
+            pB = pB.next if pB else headA 
+        return pA
 
-        while headB:
-            if headB in seen:
-                return headB
-
-            headB = headB.next
-        return None
+    
 
         
